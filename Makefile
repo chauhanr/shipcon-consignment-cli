@@ -1,5 +1,8 @@
 build:
-	docker build -t consignment-cli .
+	GOOS=linux GOARCH=amd64 go build -o shipcon-consignment-cli
+	docker build -t shipcon-consignment-cli .
 
 run:
-	docker run -e MICRO_REGISTRY=mdns consignment-cli
+	docker run --net="host" \
+               -e MICRO_REGISTRY=mdns \
+               shipcon-consignment-cli

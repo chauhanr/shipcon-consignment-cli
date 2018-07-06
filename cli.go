@@ -44,7 +44,7 @@ func main(){
 
 	r, err := client.CreateConsignment(context.Background(), consignment)
 	if err != nil{
-		log.Fatalf("Could not great: %v", err)
+		log.Fatalf("Could not get: %v", err)
 	}
 	log.Printf("Created: %t", r.Created)
 
